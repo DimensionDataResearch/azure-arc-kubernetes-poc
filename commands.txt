@@ -33,7 +33,7 @@ az connectedk8s connect --name arc-kind --resource-group rg-arc
 
 # verify connection
 az connectedk8s list -o table
-az connectedk8s show -g rg-arc -n arc-kind
+az connectedk8s show -g rg-arc-demo -n arc-kind
 
 # gitops config
 az k8sconfiguration create \
@@ -46,14 +46,14 @@ az k8sconfiguration create \
 
 
 # list configs
-az k8sconfiguration list -g rg-arc -c arc-kind --cluster-type connectedClusters -o table
+az k8sconfiguration list -g rg-arc-demo -c arc-kind --cluster-type connectedClusters -o table
 
 # delete config
-az k8sconfiguration delete -g rg-arc -c arc-kind --cluster-type connectedClusters -n realtime-config -o table
+az k8sconfiguration delete -g rg-arc-demo -c arc-kind --cluster-type connectedClusters -n realtime-config -o table
 
 
 # deploy config with ARM template
-az deployment group create -g rg-arc --template-file arm/config-template.json --parameters arm/config-template.parameters.json 
+az deployment group create -g rg-arc-demo --template-file arm/config-template.json --parameters arm/config-template.parameters.json 
 
 # via policy - assign custom Arc policy to connected cluster object
 # issue: not working - recreated policy based on new policy example 14/5/2020
