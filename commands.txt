@@ -40,7 +40,7 @@ az k8sconfiguration create \
     --name realtime-config \
     --cluster-name arc-kind --resource-group rg-arc-demo \
     --operator-instance-name realtime-config --operator-namespace realtime \
-    --repository-url git@scm.dimensiondata.com:DevOpsSydney/arc-poc.git \
+    --repository-url git@github.com:DimensionDataResearch/azure-arc-kubernetes-poc.git \
     --scope namespace --cluster-type connectedClusters \
     --operator-params='--git-path=config --git-user="user name" --git-email=user@didata.com.au'
 
