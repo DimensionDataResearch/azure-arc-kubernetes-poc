@@ -26,10 +26,10 @@ az extension list -o table
 
 # connect a cluster
 # create RG
-az group create --name rg-arc -l westeurope -o table
+az group create --name rg-arc-demo -l westeurope -o table
 
 # connect
-az connectedk8s connect --name arc-kind --resource-group rg-arc
+az connectedk8s connect --name arc-kind --resource-group rg-arc-demo
 
 # verify connection
 az connectedk8s list -o table
