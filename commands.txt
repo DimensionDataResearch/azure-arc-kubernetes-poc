@@ -26,7 +26,7 @@ az extension list -o table
 
 # connect a cluster
 # create RG
-az group create --name rg-arc-demo -l westeurope -o table
+az group create --name rg-arc-demo -l eastus -o table
 
 # connect
 az connectedk8s connect --name arc-kind --resource-group rg-arc-demo
